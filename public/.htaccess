@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteRule ^/?wiki$ wiki/Main_Page [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^/?wiki/(.*) wiki/index.php?title=$1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.*) index.php?url=$1 [L,QSA]
+
+php_value magic_quotes_gpc Off

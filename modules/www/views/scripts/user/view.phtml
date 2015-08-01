@@ -1,0 +1,34 @@
+<h1><?php echo $this->translate('My profile') ?></h1>
+
+<h2><?php echo $this->translate('My applications') ?></h2>
+
+<?php if (sizeof($this->applications) == 0): ?>
+<p><?php echo $this->translate('You haven\'t created any applications yet.') ?></p>
+<?php else: ?>
+<table>
+	<tr>
+		<th><?php echo $this->translate('ID') ?></th>
+		<th><?php echo $this->translate('Name') ?></th>
+		<th><?php echo $this->translate('Flags') ?></th>
+		<th><?php echo $this->translate('URL') ?></th>
+		<th><?php echo $this->translate('Templates') ?></th>
+	</tr>
+	<?php foreach ($this->applications as $application): ?>
+	<tr>
+		<td><?php echo $application->id ?></td>
+		<td><a href="<?php echo $this->url(array('id' => $application->id), 'application') ?>" title="<?php echo $this->translate('Edit') ?>"><?php echo $this->escape($application->name) ?></a></td>
+		<td>
+			<?php if ($application->privacy == 'private'): ?>
+			<img src="/www/img/icons/private.png" alt="<?php echo $this->translate('Private') ?>" title="<?php echo $this->translate('Private') ?>" />
+			<?php endif; ?>
+		</td>
+		<td><a href="<?php echo $this->escape($application->url) ?>" title="<?php echo $this->escape($application->url) ?>"><?php echo $this->escape($application->url) ?></a></td>
+		<td><?php echo $application->template_count ?></td>
+	</tr>
+	<?php endforeach; ?>
+</table>
+<?php endif; ?>
+
+<ul>
+	<li><a href="<?php echo $this->url(array(), 'application-new') ?>" title="<?php echo $this->translate('Register an application') ?>"><?php echo $this->translate('Register an application') ?></a></li>
+</ul>

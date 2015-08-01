@@ -1,0 +1,11 @@
+<h1><?php echo $this->escape($this->application->name) ?></h1>
+
+<ul>
+	<li><a href="<?php echo $this->url(array('id' => $this->application->id), 'application') ?>" title="<?php echo $this->translate('Back to the application') ?>"><?php echo $this->translate('Back to the application') ?></a></li>
+</ul>
+
+<h2>New template</h2>
+
+<div class="form">
+	<?php echo $this->form ?>
+</div>

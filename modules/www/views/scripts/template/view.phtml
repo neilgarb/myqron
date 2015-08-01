@@ -1,0 +1,15 @@
+<h1><?php echo $this->escape($this->application->name) ?></h1>
+
+<ul>
+	<li><a href="<?php echo $this->url(array('id' => $this->application->id), 'application') ?>" title="<?php echo $this->translate('Back to the application') ?>"><?php echo $this->translate('Back to the application') ?></a></li>
+</ul>
+
+<h2><?php echo $this->escape($this->template->name) ?></h2>
+
+<div class="form">
+	<dl>
+		<dt><?php echo $this->translate('Body') ?></dt>
+			<dd><?php echo $this->formatText($this->template->body) ?></dd>
+	</dl>
+	<?php echo $this->form ?>
+</div>

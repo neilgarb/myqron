@@ -1,0 +1,15 @@
+<div id="left">
+	<div id="right">
+		<div class="form">
+			<h2><?php echo $this->translate('Login') ?></h2>
+			<?php echo $this->loginForm ?>
+		</div>
+	</div>
+	<h1><?php echo $this->translate('What is Myqron?') ?></h1>
+	<p><?php echo $this->translate('Myqron is a web service which allows you to maintain a private or public <strong>timeline</strong> of your own website or web application.  Myqron consumers are able to subscribe to your application\'s timeline and can receive updates via pull technologies, such as RSS, and push technologies, such as web hooks.') ?></p>
+	<h2><?php echo $this->translate('For providers') ?></h2>
+	<p><?php echo sprintf($this->translate('Myqron lets you define event templates for each type of event that you\'d like to submit.  Templates, as well as your application, may be private, so that only you can view events triggered by your application.  Events can be submitted using XML calls as defined on Myqron\'s %s, or by using %s.'), '<a href="/wiki" title="Myqron wiki">wiki</a>', '<a href="/myqron.phps" title="'.$this->translate('Myqron\'s PHP client').'">'.$this->translate('Myqron\'s PHP client').'</a>') ?></p>
+	<h2><?php echo $this->translate('For consumers') ?></h2>
+	<p><?php echo sprintf($this->translate('Myqron let\'s you choose which applications you\'d like to subscribe to, and within each application allows you to choose which event types you\'d like to see.  You can choose how to receive updates, from viewing timelines on Myqron, to RSS, to receiving push-updates via %s.'), '<a href="http://www.webhooks.org" title="'.$this->translate('Web hooks').'">'.$this->translate('web hooks').'</a>') ?></p>
+	<p><?php echo sprintf($this->translate('In order to begin, you must %s for free.'), '<a href="'.$this->url(array(), 'register').'" title="'.$this->translate('Register').'">'.$this->translate('register').'</a>') ?></p>
+</div>
